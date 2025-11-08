@@ -78,12 +78,12 @@ const projects = [
         subtitle: 'Full Stack Web App',
         description: [
             'A web platform for event management and volunteer coordination.',
-            'Features a JavaScript frontend, a Node.js/Express backend, and a PostgreSQL database.',
+            'Features a React frontend, a Node.js/Express backend, and a PostgreSQL database.',
             'Includes admin controls to manage events, monitor registrations, and oversee volunteers.'
         ],
         skills: ['JavaScript', 'Node.js', 'Express', 'PostgreSQL', 'HTML/CSS'],
         githubUrl: 'https://github.com/TANMAY-G-PROG/EPASS', // Replace with your actual GitHub link
-        demoUrl: 'https://epass-rff5.onrender.com/',   // Replace with your actual Demo link
+        demoUrl: 'https://flo-kuhn.onrender.com',   // Replace with your actual Demo link
     },
     {
         title: 'FlowBoard',
