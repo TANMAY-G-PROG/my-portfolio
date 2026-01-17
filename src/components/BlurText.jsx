@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { useEffect, useRef, useState, useMemo } from 'react';
 
 const buildKeyframes = (from, steps) => {
@@ -33,15 +32,13 @@ const BlurText = ({
     if (!ref.current) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Set inView to true if intersecting, false if not.
-        // This will reset the animation when it goes out of view.
+
         setInView(entry.isIntersecting);
       },
       { threshold, rootMargin }
     );
     observer.observe(ref.current);
     return () => observer.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [threshold, rootMargin]);
 
   const defaultFrom = useMemo(

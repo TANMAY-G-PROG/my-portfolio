@@ -4,8 +4,9 @@ const Terminal = ({ sections }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [input, setInput] = useState("");
     const [history, setHistory] = useState(["Welcome Tanmay. Type 'help' for commands."]);
-    const [isPromptingPassword, setIsPromptingPassword] = useState(false); // Added for Admin
+    const [isPromptingPassword, setIsPromptingPassword] = useState(false); 
     const inputRef = useRef(null);
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
     useEffect(() => {
         const handleKeyDown = (e) => {
@@ -31,7 +32,7 @@ const Terminal = ({ sections }) => {
         // --- PASSWORD HANDLING LOGIC ---
         if (isPromptingPassword) {
             try {
-                const res = await fetch("http://localhost:8000/api/login", {
+                const res = await fetch(`${API_URL}/api/login`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ password: cmd })
@@ -74,7 +75,7 @@ const Terminal = ({ sections }) => {
                 break;
             case 'ls':
                 try {
-                    const res = await fetch(`http://localhost:8000/api/${target}`);
+                    const res = await fetch(`${API_URL}/api/${target}`);
                     const data = await res.json();
                     response = data.map(item => `• ${item.title || item.role || item.category}`).join("\n");
                 } catch (err) {

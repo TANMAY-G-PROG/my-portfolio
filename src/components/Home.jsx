@@ -4,7 +4,6 @@ const Home = React.forwardRef(({ scrollToSection }, ref) => {
     return (
         <section ref={ref} id="home" className="relative min-h-screen flex items-center justify-center text-white px-4 overflow-hidden">
            
-            {/* --- Animated Text Content --- */}
             <div className="relative z-10 text-center px-4 flex flex-col items-center">
                 <BlurText
                     text="Hi, I'm Tanmay"

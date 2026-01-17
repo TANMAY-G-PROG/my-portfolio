@@ -13,10 +13,9 @@ const Header = ({ navLinks, activeSection, scrollToSection, isMenuOpen, setIsMen
                     </div>
                     <nav className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
-                            {/* --- THIS LOGIC IS UPDATED TO HANDLE THE RESUME LINK --- */}
                             {navLinks.map((link) => (
                                 link.external ? (
-                                    // If it's an external link (like the resume), render this
+                    
                                     <a
                                         key={link.id}
                                         href={link.url}
@@ -27,7 +26,7 @@ const Header = ({ navLinks, activeSection, scrollToSection, isMenuOpen, setIsMen
                                         {link.title}
                                     </a>
                                 ) : (
-                                    // Otherwise, render the normal internal scrolling link
+                                    
                                     <a
                                         key={link.id}
                                         href={`#${link.id}`}
@@ -58,7 +57,6 @@ const Header = ({ navLinks, activeSection, scrollToSection, isMenuOpen, setIsMen
             {isMenuOpen && (
                 <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {/* --- SAME LOGIC UPDATED FOR THE MOBILE MENU --- */}
                         {navLinks.map((link) => (
                             link.external ? (
                                 <a

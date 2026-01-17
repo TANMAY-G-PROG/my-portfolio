@@ -3,9 +3,9 @@ import Icon from './Icon';
 
 const Experience = React.forwardRef((props, ref) => {
     const [experienceData, setExperienceData] = useState([]);
-
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
     useEffect(() => {
-        fetch("http://localhost:8000/api/experience")
+        fetch(`${API_URL}/api/experience`)
             .then((res) => res.json())
             .then((data) => setExperienceData(data))
             .catch((err) => console.error("Error fetching experience:", err));

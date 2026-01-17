@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 const Skills = React.forwardRef((props, ref) => {
   const [skillsData, setSkillsData] = useState([]);
-
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
   useEffect(() => {
-    fetch("http://localhost:8000/api/skills")
+    fetch(`${API_URL}/api/skills`)
       .then((res) => res.json())
       .then((data) => setSkillsData(data))
       .catch((err) => console.error("Error fetching skills:", err));

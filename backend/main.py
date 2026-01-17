@@ -13,6 +13,7 @@ if os.getenv("FIREBASE_CONFIG"):
     cred = credentials.Certificate(cred_dict)
 else:
     cred = credentials.Certificate("serviceAccountKey.json")
+    
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 

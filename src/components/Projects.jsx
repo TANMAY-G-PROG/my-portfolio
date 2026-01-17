@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 const Projects = React.forwardRef((props, ref) => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
     useEffect(() => {
-        fetch("http://localhost:8000/api/projects")
+        fetch(`${API_URL}/api/projects`)
             .then((res) => res.json())
             .then((data) => {
                 setProjects(data);

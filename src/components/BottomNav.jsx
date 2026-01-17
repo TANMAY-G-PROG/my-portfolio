@@ -5,7 +5,6 @@ const BottomNav = ({ navLinks, activeSection, scrollToSection }) => {
     return (
         <nav className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50">
             <div className="flex items-center gap-4 bg-gray-900/50 backdrop-blur-md border border-gray-700 rounded-full px-6 py-2">
-            {/* <div className="flex items-center gap-2 bg-gray-900/50 backdrop-blur-md border border-gray-700 rounded-full px-4 py-2"> */}
                 {navLinks.map((link) => (
                     <a
                         key={link.id}
@@ -23,7 +22,7 @@ const BottomNav = ({ navLinks, activeSection, scrollToSection }) => {
                                 ? 'bg-indigo-600 text-white'
                                 : 'text-gray-400 hover:text-white'
                         }`}
-                        title={link.title} // Tooltip for accessibility
+                        title={link.title} 
                     >
                         <div className="transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2">
                              <Icon name={link.icon} className="w-6 h-6" />
