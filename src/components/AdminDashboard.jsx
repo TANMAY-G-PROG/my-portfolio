@@ -7,10 +7,12 @@ const AdminDashboard = () => {
     const [loading, setLoading] = useState(false);
     const password = localStorage.getItem("admin_token");
 
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+    
     const fetchItems = async () => {
         setLoading(true);
         try {
-            const res = await fetch(`http://localhost:8000/api/${activeTab}`);
+            const res = await fetch(`${API_URL}/api/${activeTab}`);
             const data = await res.json();
             setItems(Array.isArray(data) ? data : []);
         } catch (error) {
@@ -38,8 +40,8 @@ const AdminDashboard = () => {
 
         const method = editingItem?.id ? 'PUT' : 'POST';
         const url = editingItem?.id 
-            ? `http://localhost:8000/api/${activeTab}/${editingItem.id}` 
-            : `http://localhost:8000/api/${activeTab}`;
+            ? `${API_URL}/api/${activeTab}/${editingItem.id}` 
+            : `${API_URL}/api/${activeTab}`;
 
         try {
             const res = await fetch(url, {
@@ -64,7 +66,7 @@ const AdminDashboard = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Delete permanently?")) return;
         try {
-            await fetch(`http://localhost:8000/api/${activeTab}/${id}`, {
+            await fetch(`${API_URL}/api/${activeTab}/${id}`, {
                 method: 'DELETE',
                 headers: { 'x-admin-password': password }
             });
