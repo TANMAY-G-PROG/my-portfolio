@@ -35,7 +35,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "tan1234#")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
+
+if not ADMIN_PASSWORD:
+    raise RuntimeError("ADMIN_PASSWORD not set")
+
 
 async def verify_admin(x_admin_password: str = Header(None)):
     """Security dependency to check for the admin password in request headers."""
