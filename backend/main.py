@@ -69,11 +69,11 @@ class SkillCategory(BaseModel):
     category: str
     skills: List[SkillObject]
 
-@app.post("/api/login")
-async def login(data: dict):
-    if data.get("password") == ADMIN_PASSWORD:
-        return {"status": "success", "message": "Authenticated"}
-    raise HTTPException(status_code=401, detail="Invalid Credentials")
+# @app.post("/api/login")
+# async def login(data: dict):
+#     if data.get("password") == ADMIN_PASSWORD:
+#         return {"status": "success", "message": "Authenticated"}
+#     raise HTTPException(status_code=401, detail="Invalid Credentials")
 
 @app.get("/api/projects")
 async def get_projects():
