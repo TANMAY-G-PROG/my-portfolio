@@ -3,7 +3,7 @@ import { ParticleCard } from './ParticleCard';
 
 const About = React.forwardRef((props, ref) => {
 
-    const resumeLink = "https://drive.google.com/file/d/1wyIq5Lb517rW-PmQmkJeM8KkN19c_knN/view?usp=drive_link";
+    const resumeLink = "https://drive.google.com/file/d/1Hbq4qfpfOdE4hniVw0hsQNA6qqVQeJbK/view?usp=sharing";
 
     return (
         <section ref={ref} id="about" className="px-4 text-white min-h-screen flex items-center">
