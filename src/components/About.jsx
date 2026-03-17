@@ -48,7 +48,7 @@ const About = React.forwardRef((props, ref) => {
                                     </li>
                                     <li>Won a GenAI hackathon organised by the ACM Club in collaboration with HiDevs.</li>
                                     <li>GirlScript Summer of Code 2025 Contributor.</li>
-                                    <li>Leetcode (max 1742 rating).</li>
+                                    <li>Leetcode (max 1766 rating).</li>
                                 </ul>
                             </div>
 
