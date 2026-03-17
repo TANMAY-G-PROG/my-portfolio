@@ -42,7 +42,10 @@ const About = React.forwardRef((props, ref) => {
 
                             <div>
                                 <h4 className="text-2xl font-semibold text-white mt-4 mb-3">Achievements</h4> {/* Changed from text-xl */}
-                                <ul className="list-disc list-inside space-y-2 text-base"> 
+                                <ul className="list-disc list-inside space-y-2 text-base">
+                                    <li className="text-indigo-400 font-semibold">
+                                        🏆 Winner of Smart India Hackathon (SIH) 2025
+                                    </li>
                                     <li>Won a GenAI hackathon organised by the ACM Club in collaboration with HiDevs.</li>
                                     <li>GirlScript Summer of Code 2025 Contributor.</li>
                                     <li>Leetcode (max 1742 rating).</li>
